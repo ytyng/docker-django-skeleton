@@ -15,6 +15,9 @@ temp
 *.egg-info/
 dist/
 
+# DB
+*.sqlite3
+
 # Windows
 Thumbs.db
 
