@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd $(dirname ${BASH_SOURCE:-$0})
+
 . _settings.sh
 
 mkdir -p -m 777 ${LOG_DIR}

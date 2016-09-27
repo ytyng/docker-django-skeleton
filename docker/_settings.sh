@@ -1,9 +1,10 @@
 #!/usr/bin/env bash
 
+# App Name = Dir name = Docker image name = Docker container name
 export APP_NAME=docker-django-skeleton
 export DJANGO_APP_NAME=docker_django_skeleton
 
-PROJECT_DIR=$(cd $(dirname $0)/..;pwd)
+PROJECT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0})/..;pwd)
 
 if [ "`which docker-machine`" ]; then
     # mac
