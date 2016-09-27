@@ -19,6 +19,13 @@ RUN ln -s /usr/lib/x86_64-linux-gnu/libjpeg.so /usr/lib/libjpeg.so
 
 # RUN easy_install3 pip  # aptで入れた方が安定
 
+# set locale
+RUN locale-gen en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+# python libraries
 COPY requirements/base.txt /tmp/requirements/base.txt
 RUN pip3 install -r /tmp/requirements/base.txt
 
@@ -29,12 +36,6 @@ COPY supervisor-app.conf /etc/supervisor/conf.d/
 
 RUN mkdir -p /etc/nginx/certs
 # COPY certs /etc/nginx/certs/
-
-# set locale
-RUN locale-gen en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US:en
-ENV LC_ALL en_US.UTF-8
 
 EXPOSE 80
 #EXPOSE 443
