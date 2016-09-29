@@ -6,7 +6,7 @@ export DJANGO_APP_NAME=docker_django_skeleton
 
 PROJECT_DIR=$(cd $(dirname ${BASH_SOURCE:-$0})/..;pwd)
 
-if [ "`which docker-machine`" ]; then
+if [ $(which docker-machine) ]; then
     # mac
     eval "$(docker-machine env default)"
     DOCKER_COMMAND=docker

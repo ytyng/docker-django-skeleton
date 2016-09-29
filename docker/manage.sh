@@ -4,7 +4,7 @@ cd $(dirname ${BASH_SOURCE:-$0})
 
 . _settings.sh
 
-EXISTS=`${DOCKER_COMMAND} ps |grep ${APP_NAME}`
+EXISTS=$(${DOCKER_COMMAND} ps |grep ${APP_NAME})
 
 if [ "${EXISTS}" ]; then
     ${DOCKER_COMMAND} exec -it ${APP_NAME} \
